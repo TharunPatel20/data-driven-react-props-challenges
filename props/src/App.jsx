@@ -14,18 +14,24 @@ import ListOfFeatures from "./challenges/4";
 import AlertBox from "./challenges/5";
 import ProgressBar from "./challenges/6";
 import RenderUserDetails from "./challenges/7";
-// import ContextExample from "./context/example";
 import Recipe from "./challenges/8";
 import ContentSection from "./challenges/9";
 import FilterableList from "./challenges/10";
-import ThemeToggler from "./challenges/3";
+import DynamicButton from "./challenges/3";
 
 export default function App() {
   return (
     <div>
       <UserProfileCard userData={userData} />
       <ProductDetails productData={productData} />
-      <ThemeToggler />
+      <div style={cardStyle}>
+        <DynamicButton
+          label="Submit Form"
+          onClick={() => alert("Form Submitted!")}
+        />
+        <DynamicButton label="Disabled Button" isDisabled={true} />
+      </div>
+
       <ListOfFeatures appFeatures={appFeatures} />
       <div style={cardStyle}>
         <AlertBox message="Operation successful!" type="success" />

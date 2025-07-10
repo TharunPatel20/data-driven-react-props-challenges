@@ -1,31 +1,24 @@
-// **Problem 3: Toggle Dark Mode (B)**
 
-import { useState } from "react";
-import { cardStyle } from "./Utils";
+// ### **Challenge 3: Dynamic Button**
 
-// **Description:** Create a component `ThemeToggler` with a button. When the button is clicked, it should toggle a "dark mode" class on the `<body>` element. The button text should also change between "Enable Dark Mode" and "Disable Dark Mode".
+//   * **Objective:** Create a reusable button component with dynamic text and an optional disabled state.
+//   * **Props:**
+//       * `label` (string)
+//       * `isDisabled` (boolean, optional, default `false`)
+//       * `onClick` (function, optional)
+//   * **Example Usage in Parent:**
+//     ```jsx
+//     <DynamicButton label="Submit Form" onClick={() => alert('Form Submitted!')} />
+//     <DynamicButton label="Disabled Button" isDisabled={true} />
+//     ```
+//   * **Hints:** Use the `disabled` attribute on the `<button>` tag. Pass the `onClick` prop directly to the button's `onClick` event handler.
+//   * **Expected Output (Conceptual):** A button that can be enabled/disabled and has dynamic text.
 
-// **Concepts:** `useState`, `onClick` event, `document.body.classList.toggle()`, side effects (though `useEffect` isn't strictly necessary for this simple case, it's good to start thinking about it for DOM manipulation).
 
-// **Expected Output:** A button that toggles a dark background/text color on the page and updates its own text
-
-export default function ThemeToggler() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+export default function DynamicButton({ label, isDisabled = false, onClick }) {
   return (
-    <div
-      style={{
-        ...cardStyle,
-        backgroundColor: isDarkMode ? "#333" : "#fff",
-        color: isDarkMode ? "#fff" : "#000",
-      }}
-    >
-      <h2>Theme Toggler</h2>
-      <button onClick={toggleDarkMode}>
-        {isDarkMode ? "Disable Dark Mode" : "Enable Dark Mode"}
-      </button>
-    </div>
+    <button disabled={isDisabled} onClick={onClick}>
+      {label}
+    </button>
   );
 }
