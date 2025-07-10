@@ -48,3 +48,11 @@ export const pizzaRecipe = {
   ],
   instructions: "Roll out dough. Spread sauce. Add cheese and toppings. Bake at 450°F for 12-15 minutes."
 };
+
+
+export const inventoryItems = [
+        { id: 1, name: "Laptop", category: "Electronics" },
+        { id: 2, name: "Desk Chair", category: "Furniture" },
+        { id: 3, name: "Monitor", category: "Electronics" },
+        { id: 4, name: "Bookshelf", category: "Furniture" }
+      ];
