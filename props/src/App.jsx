@@ -14,16 +14,18 @@ import ListOfFeatures from "./challenges/4";
 import AlertBox from "./challenges/5";
 import ProgressBar from "./challenges/6";
 import RenderUserDetails from "./challenges/7";
-import ContextExample from "./context/example";
+// import ContextExample from "./context/example";
 import Recipe from "./challenges/8";
 import ContentSection from "./challenges/9";
 import FilterableList from "./challenges/10";
+import ThemeToggler from "./challenges/3";
 
 export default function App() {
   return (
     <div>
       <UserProfileCard userData={userData} />
       <ProductDetails productData={productData} />
+      <ThemeToggler />
       <ListOfFeatures appFeatures={appFeatures} />
       <div style={cardStyle}>
         <AlertBox message="Operation successful!" type="success" />
