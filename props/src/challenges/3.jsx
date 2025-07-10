@@ -15,13 +15,17 @@ export default function ThemeToggler() {
     setIsDarkMode(!isDarkMode);
   };
   return (
-    <div style={{ ...cardStyle, backgroundColor: isDarkMode ? "#333" : "#fff", color: isDarkMode ? "#fff" : "#000" }}>
-    
+    <div
+      style={{
+        ...cardStyle,
+        backgroundColor: isDarkMode ? "#333" : "#fff",
+        color: isDarkMode ? "#fff" : "#000",
+      }}
+    >
       <h2>Theme Toggler</h2>
       <button onClick={toggleDarkMode}>
         {isDarkMode ? "Disable Dark Mode" : "Enable Dark Mode"}
       </button>
-    
     </div>
   );
 }
